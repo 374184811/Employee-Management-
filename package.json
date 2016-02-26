@@ -1,0 +1,14 @@
+{
+  "name": "hiring-nodejs",
+  "version": "0.0.1",
+  "description": "A coding exercise for full stack nodejs job applicants",
+  "main": "server.js",
+  "author": "Simon Chung <simon_chung2@cable.comcast.com>",
+  "dependencies": {
+    "express": "4.12.2"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  }
+}

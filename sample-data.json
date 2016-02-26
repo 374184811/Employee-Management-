@@ -1,0 +1,29 @@
+{
+    "results":
+    [
+        {    
+		     "id" : "1",
+             "fName" : "James",
+             "lName" : "King",
+             "currency" : "$",
+             "salary" : "150,000",
+             "month" : "12"
+        },
+        {
+		     "id" : "2",
+             "fName" : "Paul",
+             "lName" : "Jones",
+             "currency" : "$",
+             "salary" : "120,000",
+             "month" : "10"
+        },
+        {
+		     "id" : "3",
+             "fName" : "Julie",
+             "lName" : "Taylor",
+             "currency" : "$",
+             "salary" : "100,000",
+             "month" : "9"
+        }
+    ]
+}
