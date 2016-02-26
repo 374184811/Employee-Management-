@@ -1,0 +1,75 @@
+<div >
+<div class="panel panel-default">
+    <div class="panel-body">
+			<div class="row">
+			<div class="col-sm-4">
+			<a class="btn btn-primary" href="#/route2/{{ id}}" ng-click="manageredit(id-1)">
+					<span class="glyphicon glyphicon-chevron-left"></span>  Back
+					</a></div>
+			<div class="col-sm-4"><h3>Employee</h3></div>
+	        </div>
+			
+			<div class="col-sm-8">	
+				<table id="Table" class="table table-striped">
+				<thead>
+				 <tr>
+				  <th><img height="200px" ng-src='{{users[temp].imageUrl}}'></th>
+				  <th>{{fName+" "+lName}}<br>{{title}}</th>
+				 </tr>
+				</thead>
+				
+				<tbody>
+				<tr>
+					<td>View Manager</td>
+					<td>{{ users[manager].fName +" "+ users[manager].lName }}</td>
+					<td>
+					<a class="btn btn-primary" href="#/route21/{{ id}}" ng-click="manageredit(manager)"
+					ng-disabled="view_manager"><span class="glyphicon glyphicon-chevron-right"></span>  Next
+					</a>
+					</td>
+				</tr>				
+				<tr>
+					<td>View Direct Reports</td>
+					<td ng-model="direct">{{ direct.length }}</td>
+					<td>
+					<a class="btn btn-primary" href="#/route22/{{ direct}}" ng-click="directedit(direct)"
+					ng-disabled="view_direct"><span class="glyphicon glyphicon-chevron-right"></span>  Next
+					</a>
+					</td>
+				</tr>
+				<tr>
+					<td>Sex</td>
+					<td>{{ Sex }}</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>Call Office</td>
+					<td>{{ office }}</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>Call Cell</td>
+					<td>{{ cell }}</td>
+					<td>			
+					</td>
+				</tr>
+				<tr>
+					<td>SMS</td>
+					<td>{{ SMS }}</td>
+					<td>			
+					</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>{{ email }}</td>
+					<td>
+					</td>
+				</tr>
+				</tbody> 
+			</table>  
+		</div>				  			  
+    </div>
+  </div>
+</div>

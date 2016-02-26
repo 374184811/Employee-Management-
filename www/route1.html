@@ -1,0 +1,62 @@
+<div >
+<div class="panel panel-default">
+    <div class="panel-body">
+	<div class="row"><div class="col-sm-4" ><h3>Employee Directory</h3></div></div>
+			<div class="row"><div class="col-sm-4" ><h3>User Page: {{ currentPage }}</h3></div></div>
+			<div class="row">           
+            <div class="col-sm-4">
+              <label for="search">Search:</label>
+              <input ng-model="t" id="search" class="form-control" placeholder="Filter text"></input>
+            </div> 
+            <div class="col-sm-4">
+              <label for="search">items per page:</label>
+              <input type="number" min="1" max="100" class="form-control" ng-model="pageSize"></input>
+            </div>
+          
+		    <div class="col-sm-4">
+			<label for="search">Sort:</label>
+               <select ng-model="orderProp" class="form-control"> 
+				<option value="id">Order by ID</option>
+				<option value="lName">Order by Last Name</option> 
+				<option value="fName">Order by First Name</option> 
+				<option value="title">Order by Title</option> 
+				<option value="direct.length">Order by Direct</option> 
+			   </select>
+            </div>
+		  </div>
+				
+			<table id="Table" class="table table-striped" ng-model="users">
+				<thead>
+				 <tr>
+				  <th>Image</th>
+				  <th>Name/Title</th>
+
+				  <th>Direct Reports</th>				  
+				  <th>More Details</th>
+				 </tr>
+				</thead>
+				<tbody >
+				<tr dir-paginate="user in users | filter:t | orderBy:orderProp | itemsPerPage: pageSize" current-page="currentPage">
+
+				    <td><img height="100px" ng-src='{{user.imageUrl}}'></td>
+					<td><br><b>{{ user.fName +" "+user.lName}}</b><br>{{ user.title }}</td>				
+					
+					<td><br><b><font color="blue">{{ user.direct.length }}</font></b></td>
+					<td><br>
+					<a class="btn btn-primary" href="#/route2/{{ user.id}}" ng-click="editUser(user.id)">
+					<span class="glyphicon glyphicon-chevron-right"></span> 
+					</a>
+					</td>
+				</tr>
+				</tbody> 
+			</table>  
+			  
+			  
+    </div>
+</div>
+<div ng-controller="OtherController" class="other-controller">
+          <div class="text-center">
+          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+ </div>
+ </div>
